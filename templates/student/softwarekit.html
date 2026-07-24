@@ -1,0 +1,72 @@
+{% extends 'student_base.html' %}
+{% load static  %}
+{% block content %}
+
+{% if not request.session.email %}
+<script>
+    alert("you have to login first");
+    location.href="/login/";
+</script>
+{% endif %}
+
+<div class="row heading my-3">
+    <div class="text-center fs-3">
+        Software <b class="text-mycolor1">Kit <i class="fa-solid fa-key fa-spin"></i></b>
+        <hr class="w-25 mx-auto">
+        A complete toolkit to streamline your workflow and boost productivity
+    </div>
+</div>
+<!-------end heading--->
+
+<div class="row">
+    <div class="col-sm-10 shadow-lg p-3 mx-auto">
+
+        <!-- ✅ GAP FIXED HERE -->
+        <div class="row gy-4">
+
+            {% for r in sdata %}
+            <div class="col-sm-6">
+
+                <div class="card border-0 shadow-lg h-100">
+                    <div class="row g-0">
+
+                        <!-- Thumbnail -->
+                        <div class="col-md-4 d-flex align-items-center">
+                            <img src="/{{ r.thumbnail }}" class="img-fluid p-3" alt="{{ r.title }}">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ r.title }}</h5>
+
+                                <p class="card-text">
+                                    {{ r.Software_info|slice:":120" }}
+                                </p>
+
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                        {{ r.posted_date }}
+                                    </small>
+                                </p>
+
+                                <a href="{{ r.download_link }}"
+                                   class="btn btn-sm btn-dark float-end"
+                                   download>
+                                   <i class="fa-solid fa-download"></i> Download
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

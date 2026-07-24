@@ -1,0 +1,183 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        .bg-mycolor1{
+
+            background:black;
+        }
+
+        .bg-mycolor2{
+                   background: #6A1B9A;
+        }
+        .text-mycolor1{
+            color:#D50000;
+        }
+        .text-mycolor2{
+            color:#6A1B9A;
+        }
+        .ic{
+            color:black;
+            height: 30px;
+            width:30px;
+            text-align: center;
+            line-height: 28px;
+            border: 1px solid black;
+        }
+        .ic:hover{
+            transform: translateY(-5px);
+            transition: .1s;
+            background: black;
+            color: white;
+
+        }
+        #menu{
+               background: transparent !important;
+        }
+        #menu ul li a{
+            background: black;
+            color: white !important;
+
+        }
+     
+        .footer{
+            background:rgba(0,0,0,.8);
+            color: aliceblue;
+            text-align: center;
+            line-height: 50px;
+            min-height: 50px;
+        }
+        #verticalmenu  ul li{
+          list-style: none;
+          padding-left:10px;
+          margin-bottom: 10px;
+        }
+        #verticalmenu  ul li a{
+          text-decoration: none;
+          color:white;
+          font-size: 20px;
+        }
+        #verticalmenu ul li{
+          list-style:none;
+          padding-left: 10px;
+          margin-bottom:10px;
+        }
+        #verticalmenu ul li a{
+          text-decoration:none;
+          color: aliceblue;
+          font-size: 20px;
+        }
+       
+        
+           </style>
+</head>
+<body>
+<div class="container-fluid">
+    <!---start header----->
+    <div class="row header">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 pt-3">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="fs-2">TECH<b class="text-mycolor1">HUB<i class="fa-solid fa-graduation-cap"></i> 
+                       
+                    </b></div>
+                    
+                </div>
+                <div class="col-sm-2"> <i class="fa-solid fa-envelope fa-fade"></i>
+                    <b> Mail Us</b><br>
+                    khushijaiswal@gmail.in
+                
+                </div>
+                <div class="col-sm-2"> <i class="fa-solid fa-phone fa-shake"></i>
+                    <b>Call us</b>
+                    <br>6394451717
+                </div> <br> <br>
+                <div class="col-sm-3 pt-3">
+                   <i class="fa-brands fa-facebook ic"></i>
+                   <i class="fa-brands fa-instagram ic"></i>
+                   <i class="fa-brands fa-twitter ic"></i>
+                  
+                   </div>
+                   <div class="col-sm-2">
+                       <div class="col-sm-2">
+                    {% if request.session.email %}
+
+                    <img src="/{{request.session.userpic}}" class="img-thumnail rounded-circle" style="height: 40px; width: 40px;"/>
+                   <b> {{request.session.name }}</b>
+
+                    {{request.session.email}}
+                    {% else %}
+                    <img src="{% static 'images/user.jpeg'%}" class="img-thumnail rounded-circle" style="height: 40px; width: 40px;"/>
+                    <b>guest@gamil.com</b>
+                    {% endif %}
+                   </div>
+                   </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+     </div>
+     <!----------end header------------->
+     
+     <div class="row bg-mycolor1">
+     <div class="col-sm-12">
+      <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+ <i class="fa-solid fa-bars" style="background: beige;"></i>
+</a>
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body bg-mycolor1" id="verticalmenu">
+   <ul>
+    <li>
+      <a href="/student/dashboard/"><i class="fa-solid fa-house"></i> Dashboard</a>
+    </li>
+    <li>
+      <a href="/student/lectures/"><i class="fa-solid fa-image"></i> lecture </a>
+    </li>
+    <li>
+      <a href="/student/lecturecat/"><i class="fa-solid fa-layer-group"></i> Video by Category</a>
+    </li>
+    
+    <li>
+      <a href="/student/enotes/"><i class="fa-solid fa-book"></i> E-Notes</a>
+    </li>
+    <li>
+      <a href="/student/task/"><i class="fa-solid fa-book"></i> Our Task</a>
+    </li>
+    <li>
+      <a href="/student/softwarekit/"><i class="fa-solid fa-download"></i> softwarekit</a>
+    </li>
+    <li>
+      <a href="/student/profile/"><i class="fa-solid fa-user"></i> profile</a>
+    </li>
+    <li>
+      <a href="/student/signout/"><i class="fa-solid fa-right-from-bracket"></i> sign out</a>
+    </li>
+   </ul>
+    
+  </div>
+</div>
+     </div></div>
+     <!--vertical menu end-->
+
+ 
+        {% block content%}
+        {% endblock %}
+
+   
+   
+</div>
+  <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+   
+</body>
+</html>

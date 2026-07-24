@@ -1,0 +1,327 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        .bg-mycolor1{
+
+            background:#01579B;
+        }
+
+        .bg-mycolor2{
+                   background: #6A1B9A;
+        }
+        .text-mycolor1{
+            color:#D50000;
+        }
+        .text-mycolor2{
+            color:#6A1B9A;
+        }
+        .ic{
+            color:#D50000;
+            height: 30px;
+            width:30px;
+            text-align: center;
+            line-height: 28px;
+            border: 1px solid #D50000;
+        }
+        .ic:hover{
+            transform: translateY(-5px);
+            transition: .1s;
+            background: #D50000;
+            color: white;
+
+        }
+        #menu{
+               background: transparent !important;
+        }
+        #menu ul li a{
+            background: #01579B;
+            color: white !important;
+
+        }
+        .slider{
+          min-height: 450px;
+          background: linear-gradient( 45deg,rgba(0,0,0,.6),#afd0ea),url("{% static 'images/702.jpeg' %}");
+          background-size: cover;
+          background-attachment: fixed;
+        }
+        .aboutcontent{
+             font-size:16px;
+        }
+        .im{
+          height: 150px;
+        }
+        .imgpic{
+          transition: 2s;
+          height: 200px;
+          width:100%;
+        }
+        .imgpic:hover{
+          transform: scale(1.1);
+          transition: 2s;
+        }
+        .ufooter{
+          min-height:250px;
+          background: black;
+        }
+        .bfooter{
+          background-color: black;
+          height: 50px;
+        }
+        .imgteam{
+          height: 300px;
+        }
+        .imgabout{
+          height: 250px;
+        }
+        .catic{
+          height: 60px;
+          width: 60px;
+          font-size: 30px;
+        border-radius: 7px;
+          border: 1px solid black;
+          line-height: 60px;
+          transition: 2s;
+        }
+        .catic:hover{
+          background: #01579B;
+          color: wheat;
+          transition: 2s;
+        }
+        .catimg{
+          height: 130px;
+        }
+        .popularcat{
+          border:0px;
+          transition: 2s;
+        }
+        .popularcat:hover{
+        transform: scale(1.09);
+        transition: 2s;
+        } 
+        .txt{
+          height:50px;
+          background: transparent !important;
+          margin-bottom: 4%;
+          border: none !important;
+          border-bottom: 4px solid #fffbfd !important;
+          border-radius: 0px !important;
+          color: white;
+
+        }  
+        .ta{
+                   border-radius: 0px !important;
+             height:80px;
+          background: transparent !important;
+          margin-bottom: 4%;
+          border: none !important;
+          border-bottom: 4px solid #f7edf0 !important;
+        } 
+       ::placeholder{
+        color:#f5f5f5 !important;
+        
+       }
+       .btn1{
+        height:50px !important;
+        color: white !important;
+        text-align: center;
+        list-style: none;
+       }
+       .login{
+          background: rgba(136, 120, 120,.4);
+          backdrop-filter:blur(5px);
+          min-height: 400px;
+         
+        
+          
+       } 
+       .contact{
+        background:rgba(51,50,50,.4);
+       }  
+       .bgcontact{
+        background:white;
+        background-repeat:no-repeat;
+        background-size:cover;
+       } 
+       .hover-img{
+        transition:2s;
+      }
+       
+       .hover-img:hover{
+        transform:scale(1.2);
+       }
+       .d{
+        transition:2s;
+  
+       
+       }
+       .d:hover{
+        transform:scale(0.8);
+       }
+       .l{
+        height: 100px;
+        width:300px;
+       }
+       
+           </style>
+</head>
+<body>
+<div class="container-fluid">
+    <!---start header----->
+    <div class="row header">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 py-4">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="fs-2">EDU<b class="text-mycolor1">FLEX<i class="fa-solid fa-graduation-cap"></i> 
+                       
+                    </b></div>
+                    
+                </div>
+                <div class="col-sm-2"> <i class="fa-solid fa-envelope fa-fade"></i>
+                    <b>Mail Us</b><br>
+                    khushijaiswal@gmail.com
+                
+                </div>
+                <div class="col-sm-2"> <i class="fa-solid fa-phone fa-shake"></i>
+                    <b>Call us</b>
+                    <br>6394451717
+                </div> <br> <br>
+                <div class="col-sm-3 pt-3">
+                   <i class="fa-brands fa-facebook ic"></i>
+                   <i class="fa-brands fa-instagram ic"></i>
+                   <i class="fa-brands fa-twitter ic"></i>
+                   <i class="fa-brands fa-linkedin ic"></i>
+                   <i class="fa-brands fa-youtube ic"></i>
+                   </div>
+                   <div class="col-sm-2">
+                    {% if request.session.email %}
+
+                    <img src="../{{request.session.userpic}}" class="img-thumnail rounded-circle" style="height: 40px; width: 40px;"/>
+                   <b> {{request.session.name }}</b>
+
+                    {{request.session.email}}
+                    {% else %}
+                    
+                    <img src="{% static 'images/user.jpeg'%}" class="img-thumnail rounded-circle" style="height: 40px; width: 40px;"/>
+                    <b>guest@gmail.com</b>
+                    {% endif %}
+                   </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+     </div>
+     <!----------end header------------->
+
+     <!-------------start menu---->
+    <div class="row menu bg-mycolor1">
+        <div class="col-sm-6 mx-auto">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+
+  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-4">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/home/"><i class="fa-solid fa-house"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about/"> <i class="fa-solid fa-address-card"></i> About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/register/"> <i class="fa-solid fa-user"></i> Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/services/"><i class="fa-solid fa-user-tag"></i> Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/team/"><i class="fa-solid fa-people-group"></i> Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact/"><i class="fa-solid fa-phone"></i> ContactUs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/gallery/"> <i class="fa-solid fa-image"></i> Gallery</a>
+        </li>
+       
+
+       
+       
+       
+        <li class="nav-item">
+          <a class="nav-link" href="/login/">
+            <i class="fa-solid fa-key"></i> Login</a>
+        </li>
+       
+      </ul>
+    
+    </div>
+  </div>
+</nav>
+
+
+        </div>
+        
+    </div>
+</div>
+
+    <!-- end menu  -->
+     <div class="row">
+      <div class="col-sm-12" style="min-height:100px;">
+
+     {% block content%}
+
+      {% endblock %}
+      </div>
+     </div>
+   <!----start ufooter-->
+    <!-- ===== Footer Start ===== -->
+<div class="container-fluid ufooter bg-dark">
+  <div class="container">
+    <div class="row p-4 text-light">
+
+      <!-- About -->
+      <div class="col-md-3">
+        <h5>About Website</h5>
+        <p style="font-size:12px;">
+          This website is developed to provide better online services.
+          It is user friendly, secure and easy to use.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-3">
+        <h5>Quick Links</h5>
+        <p><i class="fa-solid fa-arrow-right"></i> Home</p>
+        <p><i class="fa-solid fa-arrow-right"></i> About Us</p>
+        <p><i class="fa-solid fa-arrow-right"></i> Our Team</p>
+        <p><i class="fa-solid fa-arrow-right"></i> Contact Us</p>
+        <p><i class="fa-solid fa-arrow-right"></i> Services</p>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="col-md-3">
+        <h5>Navigation</h5>
+        <p><a href="/home/" class="footer-link"><i class="fa-solid fa-arrow-right"></i> Home</a></p>
+        <p><a href="/about/" class="footer-link"><i class="fa-solid fa-arrow-right"></i> About Us</a></p>
+        <p><a href="#" class="footer-link"><i class="fa-solid fa-arrow-right"></i> Our Team</a></p>
+        <p><a href="#" class="footer-link"><i class="fa-solid fa-arrow-right"></i> Contact Us</a></p>
+        <p><a href="#" class="footer-link"><i class="fa-solid fa-arrow-right"></i> Services</a></p>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-3">
+        <h5>Get in Touch</h5>
+        <p><i class="fa-solid fa-location-dot"></i> Kmta police chowki, Barabanki Road,
+
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+
+</body>
+</html>

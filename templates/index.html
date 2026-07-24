@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  .btn{
+    height: 50px;
+  }
+</style>
+ <!------Slider start-->
+    <div class="row slider">
+   <div class="col-sm-10 mx-auto text-center">
+  
+        <div class="fs-1 text-center text-light text-uppercase mt-5">Edu<b class="text-mycolor1">Flex
+          <i class="fa-solid fa-graduation-cap"></i>
+        </b></div>
+        <div class="text-center text-light  ">EduFlex is your online learning partner. from beginner to advanced, explore easy-to-follow  coursees,
+           build real projects, and become job-ready.</div>
+           <a href="/register/" class="btn bg-mycolor1 fs-5 text-light mx-auto d-block w-25 mt-5 rounded-pill border border-2 l" >Register Now </a>
+      </div>
+  
+
+ 
+     
+    </div>
+   </div>
+
+    </div>
+        <!------Slider start-->
+    <!----About us start-->
+    <div class="row aboutus">
+      <p class="text-center fs-3">About <b class="text-mycolor1">Us</b></p>
+      <div class="col-sm-10 mx-auto">
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="{% static 'images/blog1.jpg' %}" class="img-thumbnail w-100 imgabout">
+          </div>
+          <div class="col-sm-6">
+            <p class="p-3 aboutcontent">Welcome to EduFlex, where learning knows no bounds! We are dedicated to providing high-quality online courses that empower
+               individuals to achieve their personal and professional goals.
+               Founded in 2025, our mission is to make education accessible to everyone,
+                regardless of their location or background. We believe that knowledge is the key to success,
+                and we strive to create a diverse range of courses that cater to various interests and skill levels.</p>
+
+           
+          </div>
+        </div>
+      </div>
+    </div>
+      <!----About us end-->
+      <div class="row serrvics py-3">
+       <p class="text-center fs-3">Our <b class="text-mycolor1">Services</b></p>
+       <div class="col-sm-10 mx-auto">
+        <div class="row py-2">
+            <div class="col-sm-4 d">
+              <div class="card mx-auto shadow-lg border border-0">
+                <div class="row g-0">
+                  <div class="col-3 ">
+                    <img src="{% static 'images/on.jpeg' %}" class="img-fluid serviceimg   "style="height:50px; width:60px;">
+                  </div>
+                  <div class="col-md-9 ps-2 pt-1">
+                    <b>Online Courses: </b><br/>
+                    <span> Access a diverse library of courses across various subjects. </span>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 d">
+              <div class="card mx-auto shadow-lg border border-0">
+                <div class="row g-0">
+                  <div class="col-3">
+                    <img src="{% static 'images/cert.jpg' %}" class="img-fluid serviceimg" style="height:50px; width:60px;">
+                  </div>
+                  <div class="col-md-9 ps-2 pt-1">
+                    <b>Certification Programs:  </b><br/>
+                    <span>  Earn recognized certifications to boost your resume and career prospects. </span>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 d">
+              <div class="card mx-auto shadow-lg border border-0">
+                <div class="row g-0">
+                  <div class="col-3">
+                    <img src="{% static 'images/flex.jpg' %}" class="img-fluid serviceimg" style="height:50px; width:60px;">
+                  </div>
+                  <div class="col-md-9 ps-2 pt-1">
+                    <b>Flexible Learning Options </b><br/>
+                    <span> Choose from self-paced or scheduled courses that fit your lifestyle. </span>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+               <!-------------end-->
+               </div>
+  </div>
+    <div class="row product"></div>
+    <div class="row intro"></div>
+    <div class="row contactus"></div>
+   
+ 
+{% endblock %}

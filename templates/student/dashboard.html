@@ -1,0 +1,149 @@
+{% extends 'student_base.html' %}
+{% load static %}
+
+{% block content %}
+{% if not request.session.email %}
+<script>
+    alert("you have to login first");location.href="/login/"
+</script>
+{% endif%}
+<style>
+   .dashboard{
+    height:50px;
+    width:50px;
+    border-radius:7px;
+    font-size:25px;
+    line-height:40px;
+    padding:5px;
+}
+.dashdiv{
+    margin-top:40px;
+    margin-bottom:40px;
+
+}
+#dashboard a{
+    text-decoration: none;
+}
+.dashboardcard:hover{
+   transform:scale(1.1);
+   transition:1s;
+}
+.dashboardcard{
+    transition: 1s;
+}
+         
+</style>
+
+
+<!---------Dashboard  start-->
+
+<div class="row py-2">
+    <p class="fs-3 text-center">Welcome to <b class="text-mycolor2">dashboard</b></p>
+    <div class="col-sm-10 mx-auto">
+        <div class="row py-3">
+            <!---dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboardcard">
+                <a href="/student/lectures/" style="text-decoration: none;">
+                    <div class="card shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                        <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardiv" style="background:red; height:50px; width:50px; padding-top: 15px;"></i></div>
+                        <h3 class="text-center mb-5">lecture Video</h3>
+                    </div>
+                </a>
+            </div>
+            <!---dashboard card end-->
+              <!---dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboardcard">
+                <a href="/student/lecturecat/" style="text-decoration: none;">
+                    <div class="card  shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                        <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardiv" style="background:#1c374e; height:50px; width:50px; padding-top: 15px;""></i></div>
+                        <h3 class="text-center mb-5">category</h3>
+                    </div>
+                </a>
+            </div>
+            <!---dashboard card end-->
+             <!---dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboardcard">
+                <a href="/student/enotes/" style="text-decoration: none;">
+                    <div class="card shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                        <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardiv" style="background:#032037; height:50px; width:50px; padding-top: 15px;""></i></div>
+                        <h3 class="text-center mb-5">E-Notes</h3>
+                    </div>
+                </a>
+            </div>
+            <!---dashboard card end-->
+         
+              
+              <!---dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboardcard">
+                <a href="/student/task/" style="text-decoration: none;">
+                    <div class="card shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                        <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardiv" style="background:#0c63aa; height:50px; width:50px; padding-top: 15px;""></i></div>
+                        <h3 class="text-center mb-5">Task</h3>
+                    </div>
+                </a>
+            </div>
+            <!---dashboard card end-->
+         
+             </div>
+         
+        <div class="row py-3">
+            <!---dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboardcard">
+                <a href="/student/softwarekit/" style="text-decoration: none;">
+                    <div class="card  shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                        <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardiv" style="background:#13a211; height:50px; width:50px; padding-top: 15px;""></i></div>
+                        <h3 class="text-center mb-5">Software kit</h3>
+                    </div>
+                </a>
+            </div>
+            <!---dashboard card end-->
+              <!---dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboardcard">
+                <a href="/student/profile/" style="text-decoration: none;">
+                    <div class="card  shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                        <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardiv" style="background:#233084; height:50px; width:50px; padding-top: 15px;""></i></div>
+                        <h3 class="text-center mb-5">Profile</h3>
+                    </div>
+                </a>
+            </div>
+            <!---dashboard card end-->
+             
+              <!---dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboardcard">
+                <a href="/student/signout/" style="text-decoration: none;">
+                    <div class="card  shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                        <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardiv" style="background:#010d4e; height:50px; width:50px; padding-top: 15px;""></i></div>
+                        <h3 class="text-center mb-5">Signout</h3>
+                    </div>
+                </a>
+            </div>
+            <!---dashboard card end-->
+              <!---dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboardcard">
+                <a href="/student/signout/" style="text-decoration: none;">
+                    <div class="card  shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                        <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardiv" style="background:#625507; height:50px; width:50px; padding-top: 15px;""></i></div>
+                        <h3 class="text-center mb-5">Profile</h3>
+                    </div>
+                </a>
+            </div>
+            <!---dashboard card end-->
+         
+             </div>
+             </div>
+         
+             </div>
+         
+             </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!---------Dashboard end-->
+
+{% endblock %} 
+

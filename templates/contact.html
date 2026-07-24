@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--contact us form start-->
+
+<div class="row-py-2">
+    <p class="fs-3 text-center">Contact <b class="text-danger">Us</b></p>
+    <div class="col-sm-8 mx-auto">
+   <div class="row py-3">
+<div class="col-sm-6 contact p-5">
+         <form method="post">
+          {% csrf_token %}
+          <input type="text" class="form-control txt" required placeholder="Name" name="name"/>
+          <input type="tel" class="form-control txt" required placeholder="Number" name="mob" maxlength="10"  pattern="[0-9]{10}"/>
+          <input type="email" class="form-control txt" required placeholder="Email" name="email"/>
+          <textarea class="form-control ta" required placeholder="message" name="msg"></textarea>
+          <input type="submit" value="Save" class="form-control bg-mycolor1 btn1"> 
+        </form>
+</div>
+<div class="col-sm-6 bgcontact ">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14097.116515160316!2d80.20275125204691!3d27.95473656666263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399f734a6cc77ebd%3A0xb539d6e88ab15a75!2sMohammadi%2C%20Uttar%20Pradesh%20262804!5e0!3m2!1sen!2sin!4v1756463223268!5m2!1sen!2sin" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+   </div>
+    </div>
+</div>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

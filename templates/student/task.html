@@ -1,0 +1,75 @@
+{% extends 'student_base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if not request.session.email %}
+<script>
+   alert("You Have To Login First");
+   location.href="/login/";
+</script>
+{% endif %}
+
+<div class="row heading my-5">
+    <div class="text-center fs-3">
+        My <b class="text-mycolor1">Task
+            <i class="fa-solid fa-user fa-spin lic"></i>
+        </b>
+        <hr class="w-25 mx-auto">
+        🗂 Stay Organized with Daily Tech Tasks! <br>
+        ✅ Practice what you learn with topic-wise tasks.
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+
+        <form method="post" action="/student/tsubmitted/" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <table class="table table-striped table-bordered text-center">
+                <tr>
+                    <th>Title / Description</th>
+                    <th>Download Task</th>
+                    <th>Upload Task</th>
+                    <th>Submit</th>
+                </tr>
+
+                {% for r in data %}
+                <tr>
+                    <td class="text-start">
+                        <b>{{ r.title }}</b>
+                        <p>{{ r.task_info|slice:":50" }}</p>
+                    </td>
+
+                    <!-- ✅ DOWNLOAD FIXED -->
+                    <td>
+                        {% if r.task_file %}
+                        <a href="{{ r.task_file.url }}" class="btn btn-success" download>
+                            <i class="fa-solid fa-download"></i> Download
+                        </a>
+                        {% else %}
+                        <span class="text-danger">No File</span>
+                        {% endif %}
+                    </td>
+
+                    <!-- Upload -->
+                    <td>
+                        <input type="file" name="fu" class="form-control" required>
+                        <input type="hidden" name="title" value="{{ r.title }}">
+                        <input type="hidden" name="tid" value="{{ r.id }}">
+                    </td>
+
+                    <td>
+                        <input type="submit" class="btn btn-danger" value="Upload">
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

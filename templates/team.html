@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  img{
+    height: 300px;
+    width:80px;
+  }
+</style>
+
+<!---team section start-->
+    <div class="row team py-2">
+        <p class="text-center fs-3">Our <b class="text-mycolor1">Team</b></p>
+      <div class="col-sm-10 mx-auto">
+        <div class="row py-2">
+          {% for n in tea %}
+          <!----team 1st start-->
+          <div class="col-sm-4">
+          <div class="card-shadow-lg  border border-2">
+            <img src="../{{n.picture}}" class="card-img-top"/>
+            <p class="py-2 text-center fw-bold p-0">{{n.title}}</p>
+            <p class="py-2 text-center fw-bold p-0">{{n.language}}</p>
+          </div>
+           </div>
+        {% endfor%}
+         
+        </div>
+
+      </div>
+    </div>
+     <!---team section end-->
+
+
+
+
+
+{% endblock %}

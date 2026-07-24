@@ -1,0 +1,55 @@
+{% extends 'student_base.html' %}
+{% load static  %}
+{% block content %}
+{% if not request.session.email %}
+<script>
+    alert("you have to login first");location.href="/login/"
+</script>
+{% endif%}
+<div class="row heading my-3">
+    <div class="text-center fs-3">E-<b class="text-mycolor1">Notes <i class="fa-solid fa-book"></i></b>
+    <hr class="w-25 mx-auto">
+    Quick revision material for smart learning and better retention.
+    </div>
+</div>
+
+<!-------end heading-->
+
+<div class="row">
+    <div class="col-sm-10 Shadow-lg p-2 mx-auto">
+        <div class="row">
+            {% for r in notes %}
+            <!-------start notes-->
+            <div class="col-sm-6">
+           
+                        <!------------start card-------->
+
+          <div class="card mb-3 border-0 Shadow-lg my-2">
+  <div class="row ">
+    
+    <div class="col-md-4">
+          <img src="{% static 'images/pdf1.jpeg' %}" class="img-fluid p-4">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{r.title}}</h5>
+        <p class="card-text">{{r.notes_info}}</p>
+        <p class="card-text"><small class="text-body-secondary">
+          <b class="text-"><i class="fa-solid fa-calender"></i > Posted date</b> {{r.posted_date}}</small>
+        <span class="badge bg-mycolor1 float-end text-light"><i class="fa-solid fa-download"></i><a style="text-decoration: none;"  href="/{{r.notesfile}}">Download</a></span>
+        </p>
+      </div>
+    </div>
+      
+  </div>
+</div>
+
+        <!------------end card-------->
+
+            </div>
+            {% endfor %}
+              <!-------ends notes-->
+        </div>
+    </div>
+</div>
+{% endblock %}

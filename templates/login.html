@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static  %}
+{% block content %}
+<style>
+    .fa-solid{
+        height:65px ;
+        width: 65px;
+        text-align: center;
+        line-height: 65px;
+       
+    }
+    .btn5{
+        height:70px ;
+        width: 560px;
+        text-align: center;
+        line-height: 65px; 
+       margin-top: 20px;
+       background:  #01579B;
+       color: aliceblue;
+       font-size: 20px;
+
+    }
+ 
+</style>
+<div class="row heading my-3">
+    <div class="text-center fs-3">Login <b class="text-mycolor1">In <i class="fa-solid fa-key fa-spin"></i></b>
+    <hr class="w-25 mx-auto">
+  <p>Login to continue your learning journey</p> 
+    </div>
+</div>
+<!------------heading end-->
+<div class="row">
+    <div class="col-sm-5 mx-auto">
+        <form method="POST">
+            {% csrf_token %}
+        USERID
+        <div class="input-group Mb-4 Shadow-lg">
+            
+            <i class="input-group-text lic bg-mycolor1 text-light"><i class="fa-solid fa-user"></i> </i>
+            <input type="email" class="form-control" required placeholder="Userid.." name="email"/>
+        </div> <br>
+        PASSWORD
+             <div class="input-group Mb-3 Shadow-lg">
+            
+<i class="input-group-text lic bg-mycolor1 text-light"><i class="fa-solid fa-key"></i> </i>
+            <input type="password" class="form-control" required placeholder="password" name="passwd"/>
+        </div>
+  
+           
+            <input type="submit" class="form-control btn5" value="submit" />
+    </form>
+      
+  
+    
+    </div>
+    
+</div>
+{% endblock %}
